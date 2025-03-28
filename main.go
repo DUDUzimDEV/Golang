@@ -3,16 +3,12 @@ package main
 import "fmt"
 
 func main () {
-	a, b := 10, 3
-	fmt.Println("A soma é: ", a + b)
-	fmt.Println("A subtração é: ", a - b)
-	fmt.Println("O multiplicação é: ", a * b)
-	fmt.Println("A divisão é: ", a / b)
-	fmt.Println("O resto da divisão é: ", a % b)
-
-	a+=1
-	fmt.Println("Incrementar a", a)
-	if a > 0 && b > 0 {
-		fmt.Println("Numeros positivos")
-	}
+ var num1 float32
+ var num2 float32
+ fmt.Println("Digite dois numeros:")	
+ fmt.Scan(&num1, &num2)
+ fmt.Println("A soma é: ", num1 + num2)
+ fmt.Println("A subtração é: ", num1 - num2)
+ fmt.Println("O multiplicação é: ", num1 * num2)
+ fmt.Println("A divisão é: ", num1 / num2)
 }
