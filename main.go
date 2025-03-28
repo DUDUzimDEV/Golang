@@ -3,7 +3,10 @@ package main
 import "fmt"
 
 func main () {
-	var x int = 10
-	x += 5
-	fmt.Print("O valor de x é: ", x)
+	a, b := 10, 3
+	fmt.Println("A soma é: ", a + b)
+	fmt.Println("A subtração é: ", a - b)
+	fmt.Println("O multiplicação é: ", a * b)
+	fmt.Println("A divisão é: ", a / b)
+	fmt.Println("O resto da divisão é: ", a % b)
 }
