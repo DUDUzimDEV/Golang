@@ -1,28 +1,59 @@
 package main 
 
-import "fmt"
+import (
+    "fmt"
+    //"strings"
+    "sort"
+)
 
 func main () {
-    var ages = [4]int{16, 15, 16, 15}
-    nomes := [4]string{"Eduardo", "Bruno", "Pedro", "Yan"}
+    /*   greeting := "Hello my friends!"
+    fmt.Println(strings.Contains(greeting, "friends"))
+    fmt.Println(strings.ReplaceAll(greeting, "Hello", "Hi"))
+    fmt.Println(strings.ToUpper(greeting))
+    fmt.Println(strings.Index(greeting, "my"))
+    fmt.Println(strings.Split(greeting, "!"))    */
+    
+    ages := []int {50, 80, 10}
+    sort.Ints(ages)
     fmt.Println(ages)
-    fmt.Println(nomes)
-    nomes[3] = "Vini"
-    fmt.Println(nomes)
-   // Slice
-   var score = []int{100, 200, 300, 400}
-   fmt.Println(score)
-   score[1] = 2
-   fmt.Println(score, len(score), cap(score))
-   rangeOne := score[1:3]
-   fmt.Println(rangeOne)
-   rangeTwo := score[2:]
-   fmt.Println(rangeTwo)
-   rangeThree := score[:3]
-   fmt.Println(rangeThree)
+    index := sort.SearchInts(ages, 50)
+    fmt.Println(index)
+    names := []string{"Pedro", "Bruno", "Yan"}
+    sort.Strings(names)
+    fmt.Println(names)
+    fmt.Println(sort.SearchStrings(names, "Pedro"))  
+    
+    
+   /* x := 0
+    for x <= 5 {
+        fmt.Println(x)
+        x++
+    }
 
-   var superherois = []string{"Deadpool", "Homem-Aranha", "Motoqueiro Fantasma"}
-   fmt.Println(superherois)
-   superherois = append(superherois, "Ben 10")
-   fmt.Println(superherois, len(superherois), cap(superherois))
+    for i := 0; i < 5; i++ {
+        fmt.Println("for 2: ", i)
+    }
+
+    for i := 0; i < len(names); i++ {
+        fmt.Println(names[1])
+    }
+
+    for index, value := range names {
+        fmt.Println("O indice é: ", index, "e o valor ", value)
+    } */
+
+    for index, value := range ages {
+        fmt.Println("O indice é:", index, "E o valor é: ", value)
+    }
+
+    superherois := []string{"DeadPool", "Homem Aranha", "Batman"}
+
+    /*  for index, value := range superherois {
+        fmt.Println("O número do herói é: ", index, "O nome do herói é: ", value)
+    }   */
+
+    for i:=0; i < len(superherois); i++ {
+        fmt.Println("O número do herói é:", i, "e o herói é o ", superherois[1])
+    }
 }
