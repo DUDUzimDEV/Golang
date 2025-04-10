@@ -21,6 +21,7 @@ package main
         fmt.Scan(&sacado)
         if sacado > saldo || sacado < 0 {
             fmt.Println("Valor indisponivel  ")
+            main()
         } else {
             fmt.Println("Seu novo saldo é ", saldo - sacado)
             fmt.Println("Você deseja executar uma nova operação? SIM - 1 Não - 2")
@@ -37,6 +38,7 @@ package main
         fmt.Scan(&depositado)
         if depositado < 0 {
             fmt.Println("Impossivel adicionar valores menores que 0")
+            main()
         } else {
             fmt.Println("Seu novo saldo é", saldo + depositado)
             fmt.Println("Você deseja executar uma nova operação? SIM - 1 Não - 2")
@@ -49,5 +51,6 @@ package main
         }
     } else {
         fmt.Println("Error")
+        main()
     }
   }  } }
