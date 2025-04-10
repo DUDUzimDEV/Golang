@@ -7,8 +7,13 @@ package main
     var decisão float64
     var sacado float64
     var depositado float64
+    var decisão2 float64
     fmt.Println("Digite seu saldo")
     fmt.Scan(&saldo)
+    if saldo < 0 {
+        fmt.Println("Valor invalido")
+        main()
+    } else {
     fmt.Println("Digite 1 para Sacar e 2 para Depositar")
     fmt.Scan(&decisão)
     if decisão == 1 {
@@ -18,6 +23,13 @@ package main
             fmt.Println("Valor indisponivel  ")
         } else {
             fmt.Println("Seu novo saldo é ", saldo - sacado)
+            fmt.Println("Você deseja executar uma nova operação? SIM - 1 Não - 2")
+            fmt.Scan(&decisão2)
+            if decisão2 == 1 {
+                main()
+            } else {
+                fmt.Println("Você finalizou sua operação")
+            }
         }
     } else {
         if decisão == 2 {
@@ -27,8 +39,15 @@ package main
             fmt.Println("Impossivel adicionar valores menores que 0")
         } else {
             fmt.Println("Seu novo saldo é", saldo + depositado)
+            fmt.Println("Você deseja executar uma nova operação? SIM - 1 Não - 2")
+            fmt.Scan(&decisão2)
+            if decisão2 == 1 {
+                main()
+            } else {
+                fmt.Println("Você finalizou sua operação")
+            }
         }
     } else {
         fmt.Println("Error")
     }
-  }  }
+  }  } }
