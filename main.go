@@ -20,6 +20,7 @@ package main
             fmt.Println("Seu novo saldo é ", saldo - sacado)
         }
     } else {
+        if decisão == 2 {
         fmt.Println("Qual valor você deseja depositar?")
         fmt.Scan(&depositado)
         if depositado < 0 {
@@ -27,5 +28,7 @@ package main
         } else {
             fmt.Println("Seu novo saldo é", saldo + depositado)
         }
+    } else {
+        fmt.Println("Error")
     }
-  }
+  }  }
