@@ -15,7 +15,7 @@ package main
         fmt.Println("Qual valor você decide sacar?")
         fmt.Scan(&sacado)
         if sacado > saldo || sacado < 0 {
-            fmt.Println("Valor indisponivel")
+            fmt.Println("Valor indisponivel ")
         } else {
             fmt.Println("Seu novo saldo é ", saldo - sacado)
         }
