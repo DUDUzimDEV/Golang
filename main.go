@@ -3,14 +3,29 @@ package main
   import "fmt"
  
   func main () {
- 	var ages int
-    fmt.Println("Digite sua idade")
-    fmt.Scan(&ages)
-    if ages < 18 {
-        fmt.Println("Você é menor de idade")
-    } else if ages > 18 && ages <= 60 {
-        fmt.Println("Você é adulto")
-    } else if ages >60 {
-        fmt.Println("Você é idoso")
-    } 
+ 	var saldo float64
+    var decisão float64
+    var sacado float64
+    var depositado float64
+    fmt.Println("Digite seu saldo")
+    fmt.Scan(&saldo)
+    fmt.Println("Digite 1 para Sacar e 2 para Depositar")
+    fmt.Scan(&decisão)
+    if decisão == 1 {
+        fmt.Println("Qual valor você decide sacar?")
+        fmt.Scan(&sacado)
+        if sacado > saldo || sacado < 0 {
+            fmt.Println("Valor indisponivel")
+        } else {
+            fmt.Println("Seu novo saldo é ", saldo - sacado)
+        }
+    } else {
+        fmt.Println("Qual valor você deseja depositar?")
+        fmt.Scan(&depositado)
+        if depositado < 0 {
+            fmt.Println("Impossivel adicionar valores menores que 0")
+        } else {
+            fmt.Println("Seu novo saldo é", saldo + depositado)
+        }
+    }
   }
