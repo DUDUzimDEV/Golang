@@ -4,26 +4,14 @@ package main
       "fmt"
     )
 
-    func infoPessoais(idade int, nome string) (int, string){
-      if idade <= 0  || idade > 110 {
-        fmt.Println("Idade invalida")
-      } else if idade < 18 || idade > 0 {
-        fmt.Println("Você é menor de idada") 
-      } else {
-        fmt.Println("Você é maior de idade")
-      }
-      return idade, nome
-    }
-    
     func main () {
-      var idade int
-      var nome string
-      fmt.Println("Qual a sua idade?")
-      fmt.Scan(&idade)
-      fmt.Println("Qual o seu nome?")
-      fmt.Scan(&nome)
-      
-      fmt.Println("Nome: ", nome)
-      fmt.Println("Idade: ", idade)
-      infoPessoais(idade, nome)
+      notasAlunos := map[string]float64{
+        "Bruno" : 9.7,
+        "Otavio" : 10,
+        "Fabiano" : 8.7,
+        "Isabela" : 9.5,
+      }
+      for nome,nota := range notasAlunos {
+        fmt.Printf("%s tirou a nota %.1f \n", nome, nota)
+      }
     }
