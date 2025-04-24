@@ -4,14 +4,26 @@ package main
       "fmt"
     )
 
+    var media float64
+    var nota1 float64
+    var nota2 float64
+
+    func analisarNotas() (float64, string) {
+      fmt.Println("Quais são as notas?")
+      fmt.Scan(&nota1)
+      fmt.Scan(&nota2)
+      media := (nota1 + nota2) / 2
+      if media >= 6 {
+        return media, "Aprovado"
+      } else if media <= 5 || media > 0 { 
+        return media, "Reprovado"
+      } else {
+        return media, "Erro"
+      }
+    }
+    
     func main () {
-      notasAlunos := map[string]float64{
-        "Bruno" : 9.7,
-        "Otavio" : 10,
-        "Fabiano" : 8.7,
-        "Isabela" : 9.5,
-      }
-      for nome,nota := range notasAlunos {
-        fmt.Printf("%s tirou a nota %.1f \n", nome, nota)
-      }
+      media, resultado := analisarNotas()
+      fmt.Println(media)
+      fmt.Println(resultado)
     }
